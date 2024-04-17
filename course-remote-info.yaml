@@ -3,7 +3,7 @@ hyperskill_project:
   ide_files: https://cogniterra.org/media/attachments/lesson/24384/additional_files.json
   is_template_based: false
   use_ide: true
-update_date: "Sun, 14 Apr 2024 18:59:02 UTC"
+update_date: "Wed, 17 Apr 2024 20:24:07 UTC"
 stages:
   - id: 421
     step: 7024
@@ -19,7 +19,7 @@ stages:
     is_completed: true
   - id: 425
     step: 7028
-    is_completed: false
+    is_completed: true
 topics:
   0:
     - title: "Write, compile, and run"

@@ -401,6 +401,93 @@ files:
           }
       }
     learner_created: false
+  - name: purchases.txt
+    visible: true
+    text: |
+      Balance=785.64
+      Almond 250g,Food,35.43
+      Milk,Food,3.5
+      Red Fuji Apple,Food,5.99
+      Eggs,Food,3.99
+      FIJI Natural Artesian Water,Food,25.98
+      Hershey's milk chocolate bars,Food,8.54
+      Great Value Broccoli Florets,Food,1.0
+      Keystone Ground Bee,Food,6.28
+      Gildan LT,Clothes,8.61
+      Men's Dual Defense Crew Socks 12 Pairs,Clothes,13.0
+      Wrangler Men's Stretch Cargo Pant,Clothes,19.97
+      LEGO DUPLO Town Farm Animals,Entertainment,10.1
+      Cinema,Entertainment,8.73
+      Skate rental,Entertainment,30.0
+      Sensodyne Pronamel Toothpaste,Other,19.74
+      Chick-fil-A $10 Gift Card,Other,10.0
+      Debt,Other,3.5
+    learner_created: true
+  - name: src/budget/Purchase.java
+    visible: true
+    text: |
+      package budget;
+      
+      public class Purchase {
+      
+          public Purchase(String purchaseName, String purchaseCategory, double purchasePrice) {
+              this.purchaseName = purchaseName;
+              this.purchaseCategory = purchaseCategory;
+              this.purchasePrice = purchasePrice;
+          }
+      
+          private String purchaseName;
+          private String purchaseCategory;
+          private double purchasePrice;
+      
+          @Override
+          public String toString() {
+              return "Purchase{" +
+                      "purchaseName='" + purchaseName + '\'' +
+                      ", purchaseCategory='" + purchaseCategory + '\'' +
+                      ", purchasePrice='" + purchasePrice + '\'' +
+                      '}';
+          }
+      
+          public double getPurchasePrice() {
+              return purchasePrice;
+          }
+      
+          public void setPurchasePrice(double purchasePrice) {
+              this.purchasePrice = purchasePrice;
+          }
+      
+          public String getPurchaseName() {
+              return purchaseName;
+          }
+      
+          public void setPurchaseName(String purchaseName) {
+              this.purchaseName = purchaseName;
+          }
+      
+          public String getPurchaseCategory() {
+              return purchaseCategory;
+          }
+      
+          public void setPurchaseCategory(String purchaseCategory) {
+              this.purchaseCategory = purchaseCategory;
+          }
+      
+      }
+    learner_created: true
+  - name: src/budget/Finder.java
+    visible: true
+    learner_created: true
+  - name: src/budget/Analyze.java
+    visible: true
+    learner_created: true
+  - name: src/budget/PurchaseCategory.java
+    visible: true
+    learner_created: true
 feedback_link: https://hyperskill.org/learn/step/7028#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Well done! You've finished the project. Select a new project on <a href="https://hyperskill.org/projects">Hyperskill</a>
+    to continue learning.
+  time: "Wed, 17 Apr 2024 21:19:18 UTC"
 record: -1

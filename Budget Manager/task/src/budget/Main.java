@@ -13,7 +13,8 @@ public class Main {
 
     static List<String> purchasesCategories = List.of("Food", "Clothes", "Entertainment", "Other", "Back");
 
-   static DecimalFormat dec = new DecimalFormat("#.00");
+    static DecimalFormat dec = new DecimalFormat("#.00");
+
     // Call this function when user enter (1)
     private static void addIncome() {
         System.out.println();
@@ -152,6 +153,7 @@ public class Main {
         System.out.println("4) Balance");
         System.out.println("5) Save");
         System.out.println("6) Load");
+        System.out.println("7) Analyze (Sort)");
         System.out.println("0) Exit");
     }
 
@@ -179,7 +181,7 @@ public class Main {
     private static void loadPurchases() {
         System.out.println();
 
-        File savePurchasesFile = new File("purchases.txt");
+        File savePurchasesFile = new File("C:\\Users\\XPS\\IdeaProjects\\Budget Manager\\Budget Manager\\task\\purchases.txt");
 
         try (Scanner scanner = new Scanner(savePurchasesFile)) {
             String balanceLine = scanner.nextLine();
@@ -199,6 +201,34 @@ public class Main {
         System.out.println("Purchases were loaded!");
     }
 
+    private static void displayAnalyzeOptions() {
+        System.out.println();
+        System.out.println("How do you want to sort?");
+        System.out.println("1) Sort all purchases");
+        System.out.println("2) Sort by type");
+        System.out.println("3) Sort certain type");
+        System.out.println("4) Back");
+    }
+
+    private static void analyze() {
+        Scanner scanner = new Scanner(System.in);
+        Analyze analyze = null;
+        while (true) {
+            displayAnalyzeOptions();
+            String optionChoose = scanner.nextLine();
+            switch (optionChoose) {
+                case "1" -> analyze = new Analyze(new SortAllPurchases());
+                case "2" -> analyze = new Analyze(new SortPurchasesByType());
+                case "3" -> analyze = new Analyze(new SortCertainPurchases());
+                default -> {
+                    return;
+                }
+            }
+            analyze.sort(purchases);
+        }
+
+    }
+
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -214,6 +244,7 @@ public class Main {
                 case "4" -> showBalance();
                 case "5" -> savePurchases();
                 case "6" -> loadPurchases();
+                case "7" -> analyze();
                 case "0" -> {
                     System.out.println();
                     System.out.println("Bye!");
